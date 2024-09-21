@@ -8,6 +8,8 @@ services:
     ports:
       - 8080:8080
       - 8081:8081
+      - 8000:8000
+      - 50051:50051
     depends_on:
       mysql:
         condition: service_healthy
@@ -27,6 +29,7 @@ services:
       - 3306:3306
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./internal/infra/database/migrations/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "mysql", "-uroot", "-proot"]
       interval: 10s
