@@ -8,14 +8,14 @@ import (
 
 	graphql_handler "github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/devfullcycle/20-CleanArch/configs"
-	"github.com/devfullcycle/20-CleanArch/internal/event/handler"
-	"github.com/devfullcycle/20-CleanArch/internal/infra/graph"
-	"github.com/devfullcycle/20-CleanArch/internal/infra/grpc/pb"
-	"github.com/devfullcycle/20-CleanArch/internal/infra/grpc/service"
-	"github.com/devfullcycle/20-CleanArch/internal/infra/web/webserver"
-	"github.com/devfullcycle/20-CleanArch/pkg/events"
 	"github.com/streadway/amqp"
+	configs "github.com/vinicius-gregorio/fc_clean_arch_go/configs"
+	"github.com/vinicius-gregorio/fc_clean_arch_go/internal/event/handler"
+	"github.com/vinicius-gregorio/fc_clean_arch_go/internal/infra/graph"
+	"github.com/vinicius-gregorio/fc_clean_arch_go/internal/infra/grpc/pb"
+	"github.com/vinicius-gregorio/fc_clean_arch_go/internal/infra/grpc/service"
+	"github.com/vinicius-gregorio/fc_clean_arch_go/internal/infra/web/webserver"
+	"github.com/vinicius-gregorio/fc_clean_arch_go/pkg/events"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
@@ -73,7 +73,7 @@ func main() {
 }
 
 func getRabbitMQChannel() *amqp.Channel {
-	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	conn, err := amqp.Dial("amqp://guest:guest@rabbitmq:5672/")
 	if err != nil {
 		panic(err)
 	}
