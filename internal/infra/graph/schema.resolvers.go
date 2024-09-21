@@ -7,8 +7,8 @@ package graph
 import (
 	"context"
 
-	"github.com/devfullcycle/20-CleanArch/internal/infra/graph/model"
-	"github.com/devfullcycle/20-CleanArch/internal/usecase"
+	"github.com/vinicius-gregorio/fc_clean_arch_go/internal/infra/graph/model"
+	"github.com/vinicius-gregorio/fc_clean_arch_go/internal/usecase"
 )
 
 // CreateOrder is the resolver for the createOrder field.

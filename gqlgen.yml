@@ -1,10 +1,10 @@
 # Where are all the schema files located? globs are supported eg  src/**/*.graphqls
 schema:
-  - graph/*.graphqls
+  - internal/infra/graph/*.graphqls
 
 # Where should the generated server code go?
 exec:
-  filename: graph/generated.go
+  filename: internal/infra/graph/generated.go
   package: graph
 
 # Uncomment to enable federation
@@ -14,7 +14,7 @@ exec:
 
 # Where should any generated models go?
 model:
-  filename: graph/model/models_gen.go
+  filename: internal/infra/graph/model/models_gen.go
   package: model
 
 # Where should the resolver implementations go?
@@ -42,7 +42,7 @@ resolver:
 # gqlgen will search for any type names in the schema in these go packages
 # if they match it will use them, otherwise it will generate them.
 autobind:
-#  - "github.com/devfullcycle/20-CleanArch/graph/model"
+#  - "github.com/vinicius-gregorio/fc_clean_arch_go/graph/model"
 
 # This section declares type mapping between the GraphQL and go type systems
 #
