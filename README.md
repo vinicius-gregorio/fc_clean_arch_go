@@ -11,7 +11,9 @@ You should see the 3 containers running with no errors.
 
 ## What port each server responds to?
 GraphQL -> 8080
+
 HTTP -> 8000
+
 GRPC -> 50051
 
 
